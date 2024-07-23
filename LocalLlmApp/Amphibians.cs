@@ -12,7 +12,7 @@ namespace LocalSemanticKernel
     {
         internal static async Task Amphibians()
         {
-            //Suppress this diagnostic to proceed.
+           
             // Initialize the Semantic kernel
             IKernelBuilder kernelBuilder = Kernel.CreateBuilder();
 

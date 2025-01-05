@@ -90,15 +90,10 @@ namespace LocalSemanticKernel
             };
 
 
-            var prompt = @"
-    Question: {{$input}}
-    Answer the question using the memory content: {{Recall}}";
+            var prompt = @"Question: {{$input}}
+                           Answer the question using the memory content: {{Recall}}";
 
-            var arguments = new KernelArguments(settings)
-{
-    { "input", question },
-    { "collection", MemoryCollectionName }
-};
+            var arguments = new KernelArguments(settings) { { "input", question }, { "collection", MemoryCollectionName } };
 
             Console.WriteLine($"Phi-3 response (using semantic memory).");
 

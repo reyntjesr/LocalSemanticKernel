@@ -1,5 +1,4 @@
-﻿using Elastic.Transport;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
@@ -37,7 +36,6 @@ namespace LocalSemanticKernel
 
             IMemoryStore memoryStore = sqlite
                 ? await SqliteMemoryStore.ConnectAsync("mydata.db")
-                // vector size changed for nomic-embed-text-v1.5-GGUF
                 : new QdrantMemoryStore("http://localhost:6333/", 768);
 
             // get the embeddings generator service
